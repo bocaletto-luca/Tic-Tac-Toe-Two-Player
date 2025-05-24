@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tris (Tic Tac Toe) - Gioco 2 Player</title>
+  <style>
+    /* Stili di base per la pagina */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    #gameContainer {
+      margin: 0 auto;
+      max-width: 400px;
+      position: relative;
+    }
+    canvas {
+      background: #ffffff;
+      border: 2px solid #023e8a;
+      display: block;
+      margin: 20px auto;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #90e0ef;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #caf0f8;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    #playerSetup {
+      margin: 20px;
+    }
+    /* Stili per le modali (Help e Storico) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      text-align: left;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+    /* Stili per la tabella dello storico */
+    table#historyTable {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table#historyTable th, table#historyTable td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    table#historyTable th {
+      background-color: #90e0ef;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tris (Tic Tac Toe) - Gioco 2 Player</h1>
+  <div id="gameContainer">
+    <!-- Inserimento nomi giocatori -->
+    <div id="playerSetup">
+      <input type="text" id="inputPlayer1" placeholder="Nome Giocatore 1">
+      <input type="text" id="inputPlayer2" placeholder="Nome Giocatore 2">
+      <button id="btnSetNames">Avvia Partita</button>
+    </div>
+    <!-- Canvas per il gioco del Tris (3x3) -->
+    <canvas id="gameCanvas" width="400" height="400" style="display: none;"></canvas>
+    <!-- Controlli -->
+    <div id="controls" style="display: none;">
+      <button id="btnReset">Nuova Partita</button>
+      <button id="btnHelp">Help</button>
+      <button id="btnHistory">Mostra Storico</button>
+    </div>
+  </div>
+  <!-- Modale Help -->
+  <div id="helpModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeHelp">&times;</span>
+      <h2>Come si gioca a Tris</h2>
+      <p>
+        Tris (Tic Tac Toe) è un gioco per due giocatori su una griglia 3x3.<br>
+        I giocatori si alternano a posizionare il proprio simbolo: "X" per il Giocatore 1 e "O" per il Giocatore 2.<br>
+        Vince chi riesce ad allineare tre simboli consecutivi (orizzontale, verticale o diagonale).<br>
+        Se la griglia si riempie senza un vincitore, la partita finisce in pareggio.
+      </p>
+    </div>
+  </div>
+  <!-- Modale Storico -->
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeHistory">&times;</span>
+      <h2>Storico Vittorie</h2>
+      <div id="historyContent">
+        <!-- Qui verrà inserita la tabella dei record -->
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
