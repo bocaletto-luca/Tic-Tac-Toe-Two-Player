@@ -7,6 +7,8 @@
 ![Project Completed](https://img.shields.io/badge/Project-Completed-green?style=for-the-badge)
 ![GPLv3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge)
 
+[![Test Online](https://img.shields.io/badge/Test%20Online-Click%20Here-brightgreen?style=for-the-badge)](https://bocaletto-luca.github.io/Tic-Tac-Toe-Two-Player/)
+
 ## Overview
 
 **Tic Tac Toe Web Game Two-Player VS** is a modern, browser-based version of the timeless Tic Tac Toe game, reimagined for local head-to-head multiplayer competitions. With smooth animations and an intuitive interface, this lightweight web game allows you and a friend to battle it out on the classic 3x3 grid—all without any installation.
